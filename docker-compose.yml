@@ -1,0 +1,21 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  frontend:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    # Use PORT environment variable if set, otherwise use FRONTEND_PORT
+      - "${PORT:-${FRONTEND_PORT:-3001}}:80" 
+    environment:
+      - NODE_ENV=production
+      # Use API_URL environment variable if set, otherwise use REACT_APP_API_URL
+      - REACT_APP_API_URL=${API_URL:-${REACT_APP_API_URL:-REACT_APP_API_URL}}
+    networks:
+      - sensor-network
+
+networks:
+  sensor-network:
+    driver: bridge
