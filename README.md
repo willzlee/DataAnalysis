@@ -119,3 +119,15 @@ src/services/api.ts
 ```
 
 Placeholders are used to shield the actual url.
+
+
+## Screenshots
+
+### Desktop
+![Desktop](./public/images/desktop.png)
+
+### Tablet
+![Desktop](./public/images/tablet.png)
+
+### Mobile
+![Desktop](./public/images/mobile.png)
